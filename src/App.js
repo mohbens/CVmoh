@@ -13,6 +13,7 @@ import { styled } from "@mui/system";
 import { GlobalStyles } from "@mui/material";
 import HeroSection from "./components/HeroSection";
 
+import { useEffect, useState } from "react";
 const theme = createTheme({
 	palette: {
 		mode: "dark",
@@ -75,106 +76,115 @@ const ProfileImage = styled("img")({
 	borderRadius: "50%",
 });
 
-// const HeroSection = () => (
-// 	<Box
-// 		sx={{
-// 			minHeight: "100vh",
-// 			display: "flex",
-// 			alignItems: "center",
-// 			justifyContent: "center",
-// 			flexDirection: "column",
-// 			textAlign: "center",
-// 			padding: 4,
-// 			position: "relative",
-// 			overflow: "hidden",
-// 		}}>
-// 		<GlobalStyles
-// 			styles={{
-// 				".blob-filter": {
-// 					display: "none",
-// 				},
-// 			}}
-// 		/>
-
-// 		{/* SVG filter for blob effect */}
-// 		<svg style={{ position: "absolute" }}>
-// 			<filter id="goo">
-// 				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-// 				<feColorMatrix
-// 					in="blur"
-// 					mode="matrix"
-// 					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
-// 					result="goo"
-// 				/>
-// 				<feComposite in="SourceGraphic" in2="goo" operator="atop" />
-// 			</filter>
-// 		</svg>
-
-// 		<BlobContainer>
-// 			<ProfileImage
-// 				src="/your-photo.jpg" // Replace with your image path
-// 				alt="Mohamed Benselama"
-// 			/>
-// 		</BlobContainer>
-
-// 		<Typography
-// 			variant="h2"
-// 			sx={{
-// 				color: "primary.main",
-// 				mb: 2,
-// 				textShadow: "0 0 10px rgba(100, 255, 218, 0.5)",
-// 			}}>
-// 			Mohamed Benselama
-// 		</Typography>
-// 		<Typography variant="h4" sx={{ color: "text.secondary" }}>
-// 			<Code sx={{ mr: 1 }} /> Full Stack Developer
-// 		</Typography>
-// 	</Box>
-// );
-
 const AboutSection = () => (
-	<Box sx={{ padding: 4, maxWidth: "800px", margin: "0 auto" }}>
-		<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
-			À propos
-		</Typography>
-		<Typography variant="body1" paragraph sx={{ color: "text.secondary" }}>
-			Développeur web passionné spécialisé dans React . J'aime créer des
-			solutions élégantes et performantes pour des problèmes complexes.
-		</Typography>
+	<Box>
+		<Box sx={{ padding: 4, maxWidth: "1200px", margin: "0 auto" }}>
+			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
+				À propos
+			</Typography>
+			<Typography variant="body1" paragraph sx={{ color: "text.secondary" }}>
+				Développeur web passionné spécialisé dans React . J'aime créer des
+				solutions élégantes et performantes pour des problèmes complexes.
+			</Typography>
+		</Box>
+		<hr
+			style={{
+				width: "75%",
+			}}></hr>
 	</Box>
 );
 
 const ContactSection = () => (
-	<Box sx={{ padding: 4, textAlign: "center" }}>
-		<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
-			Contact
-		</Typography>
-		<Box sx={{ display: "flex", justifyContent: "center", gap: 4 }}>
-			<Link href="mohbenselama@gmail.com" color="inherit">
-				<Email sx={{ fontSize: 40, color: "primary.main" }} />
-			</Link>
-			<Link href="https://github.com/mohbens" target="_blank" rel="noopener">
-				<GitHub sx={{ fontSize: 40, color: "primary.main" }} />
-			</Link>
-			<Link
-				href="https://www.linkedin.com/in/mohamed-redha-benselama/"
-				target="_blank"
-				// rel="noopener"
-			>
-				<LinkedIn sx={{ fontSize: 40, color: "primary.main" }} />
-			</Link>
+	<Box sx={{ padding: 4, margin: "0 auto" }}>
+		<hr
+			style={{
+				width: "75%",
+			}}></hr>
+		<Box sx={{ padding: 4, textAlign: "center" }}>
+			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
+				Contact
+			</Typography>
+			<Box sx={{ display: "flex", justifyContent: "center", gap: 4 }}>
+				<Link href="mohbenselama@gmail.com" color="inherit">
+					<Email sx={{ fontSize: 40, color: "primary.main" }} />
+				</Link>
+				<Link href="https://github.com/mohbens" target="_blank" rel="noopener">
+					<GitHub sx={{ fontSize: 40, color: "primary.main" }} />
+				</Link>
+				<Link
+					href="https://www.linkedin.com/in/mohamed-redha-benselama/"
+					target="_blank"
+					// rel="noopener"
+				>
+					<LinkedIn sx={{ fontSize: 40, color: "primary.main" }} />
+				</Link>
+			</Box>
 		</Box>
 	</Box>
 );
 
 function App() {
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 100);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<HeroSection />
-			<AboutSection />
-			<ProjectList />
-			<ContactSection />
+			<Box sx={{ position: "relative", minHeight: "100vh" }}>
+				{/* Animated Hero Section */}
+				<Box
+					sx={{
+						position: isScrolled ? "fixed" : "relative",
+						top: 0,
+						left: 0,
+						width: isScrolled ? "20%" : "100%",
+						height: "100vh",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+						zIndex: 2,
+						background: theme.palette.background.default,
+					}}>
+					<HeroSection isScrolled={isScrolled} />
+
+					{/* Vertical Separator */}
+					<Box
+						sx={{
+							position: "absolute",
+							right: 0,
+							top: 0,
+							height: "100%",
+							width: "2px",
+							background: theme.palette.primary.main,
+							opacity: isScrolled ? 1 : 0,
+							transition: "opacity 0.3s 0.2s",
+						}}
+					/>
+				</Box>
+
+				{/* Content Section */}
+				<Box
+					sx={{
+						position: "relative",
+						marginLeft: isScrolled ? "20%" : 0,
+						paddingLeft: 4,
+						transition: "margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+						zIndex: 1,
+					}}>
+					<AboutSection />
+					<ProjectList />
+					<ContactSection />
+				</Box>
+			</Box>
 		</ThemeProvider>
 	);
 }

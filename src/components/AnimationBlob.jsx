@@ -17,11 +17,13 @@ const float = keyframes`
 
 const BlobContainer = styled(Box)(({ theme }) => ({
 	position: "relative",
-	width: 280, // Slightly reduced size for better proportion
+	width: 280,
 	height: 280,
 	borderRadius: "50%",
 	animation: `${float} 6s ease-in-out infinite`,
 	overflow: "hidden",
+	boxShadow: `0px 0px 50px ${theme.palette.primary.main}, 
+                inset 0px 0px 15px rgba(255, 255, 255, 0)`,
 	"&:before": {
 		content: '""',
 		position: "absolute",
