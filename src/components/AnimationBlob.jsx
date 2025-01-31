@@ -50,11 +50,20 @@ const ProfileImage = styled("img")({
 	border: "2px solid rgba(100, 255, 218, 0.1)", // Subtle border
 });
 
-const AnimatedBlob = () => (
-	<BlobContainer>
+const AnimatedBlob = ({ isScrolled }) => (
+	<BlobContainer
+		sx={{
+			width: isScrolled ? 80 : 280,
+			height: isScrolled ? 80 : 280,
+			transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important",
+		}}>
 		<ProfileImage
-			src={require("../assets/Profile.png")} // Updated path
-			alt="Mohamed Benselama"
+			src={require("../assets/Profile.png")}
+			alt="Profile"
+			sx={{
+				transform: isScrolled ? "scale(0.8)" : "scale(1)",
+				transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+			}}
 		/>
 	</BlobContainer>
 );
