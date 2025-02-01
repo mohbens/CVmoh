@@ -2,7 +2,7 @@
 import { Box, Typography } from "@mui/material";
 import { Code } from "@mui/icons-material";
 import AnimatedBlob from "./AnimationBlob";
-import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+// import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 // import a from "../assets";
 
 const HeroSection = ({ isScrolled }) => (
@@ -28,8 +28,8 @@ const HeroSection = ({ isScrolled }) => (
 				textShadow: "0 0 15px rgba(100, 255, 218, 0.4)",
 				fontSize: {
 					xs: "1.8rem",
-					sm: isScrolled ? "2rem" : "2.5rem",
-					md: isScrolled ? "2.5rem" : "3rem",
+					sm: isScrolled ? "1.3rem" : "1.8rem",
+					md: isScrolled ? "2rem" : "3rem",
 				},
 			}}>
 			Mohamed BENSELAMA
@@ -43,12 +43,12 @@ const HeroSection = ({ isScrolled }) => (
 				alignItems: "center",
 				fontSize: {
 					xs: "1.2rem",
-					sm: isScrolled ? "1.5rem" : "1.8rem",
-					md: isScrolled ? "2rem" : "2.5rem",
+					sm: isScrolled ? "1rem" : "1.5rem",
+					md: isScrolled ? "1.8rem" : "2.3rem",
 				},
 			}}>
 			<Code fontSize="inherit" sx={{ mr: "8px" }} />
-			Full Stack Developer
+			Full Stack Dev
 		</Typography>
 	</Box>
 );

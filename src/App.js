@@ -162,11 +162,12 @@ function App() {
 							position: "absolute",
 							right: 0,
 							top: 0,
-							height: "100%",
+							height: "90%",
 							width: "2px",
 							background: theme.palette.primary.main,
 							opacity: isScrolled ? 1 : 0,
 							transition: "opacity 0.3s 0.2s",
+							alignSelf: "anchor-center",
 						}}
 					/>
 				</Box>

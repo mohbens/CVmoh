@@ -25,15 +25,18 @@ const ProjectCard = ({ project }) => {
 					"&:hover": { transform: "translateY(-5px)" },
 					backgroundColor: theme.palette.background.paper,
 				}}>
-				<Box sx={{ position: "relative", paddingTop: "56.25%" }}>
+				<Box
+				// sx={{ position: "relative", paddingTop: "50%" }}
+				>
 					<Box
 						sx={{
-							position: "absolute",
+							// position: "absolute",
 							top: 0,
 							left: 0,
 							right: 0,
 							bottom: 0,
-							border: "1px solid rgba(0,0,0,0.1)",
+							height: "250px",
+							// border: "1px solid rgba(0,0,0,0.1)",
 							borderRadius: "4px 4px 0 0",
 							overflow: "hidden",
 						}}>
@@ -46,12 +49,12 @@ const ProjectCard = ({ project }) => {
 								background: "#fff",
 							}}
 							// scrolling="no"
-							title="W3Schools Free Online Web Tutorials"></iframe>
+							title={project.Title}></iframe>
 						/
 					</Box>
 				</Box>
 
-				<CardContent sx={{ flexGrow: 1 }}>
+				<CardContent>
 					<Typography variant="h6" gutterBottom>
 						{project.Title}
 					</Typography>
