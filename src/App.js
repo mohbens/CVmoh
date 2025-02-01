@@ -9,11 +9,12 @@ import {
 } from "@mui/material";
 import ProjectList from "./components/ProjectList";
 import { Code, Email, GitHub, LinkedIn } from "@mui/icons-material";
-import { styled } from "@mui/system";
+import { fontSize, styled } from "@mui/system";
 import { GlobalStyles } from "@mui/material";
 import HeroSection from "./components/HeroSection";
 
 import { useEffect, useState } from "react";
+import SkillsSection from "./components/SkillsSection";
 const theme = createTheme({
 	palette: {
 		mode: "dark",
@@ -83,8 +84,23 @@ const AboutSection = () => (
 				À propos
 			</Typography>
 			<Typography variant="body1" paragraph sx={{ color: "text.secondary" }}>
-				Développeur web passionné spécialisé dans React . J'aime créer des
-				solutions élégantes et performantes pour des problèmes complexes.
+				<span style={{ fontSize: "large", fontWeight: "bold" }}>
+					Développeur web passionné
+				</span>
+				, spécialisé en
+				<span style={{ fontSize: "large", fontWeight: "bold" }}> React</span>,
+				avec une expérience de 2 ans en tant que
+				<span style={{ fontSize: "large", fontWeight: "bold" }}>
+					{" "}
+					testeur d'APIs
+				</span>
+				. Ce parcours m’a permis de développer une excellente compréhension des
+				interactions backend/frontend et d’assurer une qualité optimale dans le
+				développement de produits web. Aujourd'hui, je me reconvertis pleinement
+				dans le développement web, avec un intérêt particulier pour la création
+				d’interfaces performantes et intuitives. Mon objectif est d’apporter des
+				solutions efficaces et innovantes en collaborant avec des équipes
+				dynamiques et créatives.
 			</Typography>
 		</Box>
 		<hr
@@ -96,10 +112,6 @@ const AboutSection = () => (
 
 const ContactSection = () => (
 	<Box sx={{ padding: 4, margin: "0 auto" }}>
-		<hr
-			style={{
-				width: "75%",
-			}}></hr>
 		<Box sx={{ padding: 4, textAlign: "center" }}>
 			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
 				Contact
@@ -177,12 +189,14 @@ function App() {
 					sx={{
 						position: "relative",
 						marginLeft: isScrolled ? "20%" : 0,
-						paddingLeft: 4,
+						paddingLeft: 2,
 						transition: "margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
 						zIndex: 1,
+						paddingTop: "240px",
 					}}>
 					<AboutSection />
 					<ProjectList />
+					<SkillsSection />
 					<ContactSection />
 				</Box>
 			</Box>

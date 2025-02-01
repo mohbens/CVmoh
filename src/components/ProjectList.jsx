@@ -107,22 +107,28 @@ const projects = [
 
 const ProjectList = () => {
 	return (
-		<Box
-			sx={{
-				padding: {
-					xs: 2,
-					md: 4,
-					lg: 15,
-				},
-			}}>
-			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
-				Projets
-			</Typography>
-			<Grid container spacing={4}>
-				{projects.map((project) => (
-					<ProjectCard key={project.id} project={project} />
-				))}
-			</Grid>
+		<Box>
+			<Box
+				sx={{
+					padding: {
+						xs: 2,
+						md: 4,
+						lg: 15,
+					},
+				}}>
+				<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
+					Projets
+				</Typography>
+				<Grid container spacing={4}>
+					{projects.map((project) => (
+						<ProjectCard key={project.id} project={project} />
+					))}
+				</Grid>
+			</Box>
+			<hr
+				style={{
+					width: "75%",
+				}}></hr>
 		</Box>
 	);
 };
