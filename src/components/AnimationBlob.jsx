@@ -16,27 +16,11 @@ const float = keyframes`
 `;
 
 const BlobContainer = styled(Box)(({ theme }) => ({
-	position: "relative",
-	width: 280,
-	height: 280,
 	borderRadius: "50%",
 	animation: `${float} 6s ease-in-out infinite`,
 	overflow: "hidden",
 	boxShadow: `0px 0px 50px ${theme.palette.primary.main}, 
                 inset 0px 0px 15px rgba(255, 255, 255, 0)`,
-	"&:before": {
-		content: '""',
-		position: "absolute",
-		width: "110%",
-		height: "110%",
-		left: "-5%",
-		top: "-5%",
-		background: theme.palette.primary.main,
-		mixBlendMode: "soft-light",
-		opacity: 0.4,
-		filter: "blur(25px)",
-		zIndex: -1,
-	},
 }));
 
 const ProfileImage = styled("img")({
@@ -46,15 +30,15 @@ const ProfileImage = styled("img")({
 	borderRadius: "inherit",
 	position: "relative",
 	zIndex: 1,
-	padding: "4px", // Adds small border space
-	border: "2px solid rgba(100, 255, 218, 0.1)", // Subtle border
+	padding: "4px",
+	border: "2px solid rgba(100, 255, 218, 0.1)",
 });
 
 const AnimatedBlob = ({ isScrolled }) => (
 	<BlobContainer
 		sx={{
-			width: isScrolled ? 80 : 280,
-			height: isScrolled ? 80 : 280,
+			width: isScrolled ? 180 : 280,
+			height: isScrolled ? 180 : 280,
 			transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important",
 		}}>
 		<ProfileImage

@@ -10,7 +10,7 @@ const tools = [
 	{
 		id: "2",
 		title: "Command Line",
-		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+		img: "https://img.icons8.com/?size=100&id=2EbawKhhFdxd&format=png&color=000000",
 	},
 	{
 		id: "3",
@@ -51,6 +51,31 @@ const tools = [
 		id: "10",
 		title: "WebPack",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg",
+	},
+	{
+		id: "11",
+		title: "Postman",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+	},
+	{
+		id: "12",
+		title: "Swagger",
+		img: "https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png",
+	},
+	{
+		id: "13",
+		title: "Jira",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
+	},
+	{
+		id: "14",
+		title: "Confluence",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg",
+	},
+	{
+		id: "15",
+		title: "MongoDB",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
 	},
 ];
 
