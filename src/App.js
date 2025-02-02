@@ -151,7 +151,6 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Box sx={{ position: "relative", minHeight: "100vh" }}>
-				{/* Animated Hero Section */}
 				<Box
 					sx={{
 						position: isScrolled ? "fixed" : "relative",

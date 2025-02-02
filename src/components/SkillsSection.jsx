@@ -1,5 +1,6 @@
-import { Box, Paper, Typography } from "@mui/material";
-import React from "react";
+import { Box, Button, ButtonGroup, Paper, Typography } from "@mui/material";
+import React, { useState } from "react";
+
 const tools = [
 	{
 		id: "1",
@@ -146,6 +147,12 @@ const handleTools = () => {
 };
 
 export default function SkillsSection() {
+	const [toggleSkills, setToggleSkills] = useState(true);
+
+	const handleSkillToggle = (showSkills) => {
+		setToggleSkills(showSkills);
+	};
+
 	return (
 		<Box sx={{ justifyItems: "center" }}>
 			<Box sx={{ display: "flex", alignItems: "center", maxWidth: "950px" }}>
@@ -165,6 +172,18 @@ export default function SkillsSection() {
 						users get things done with less effort and time with these
 						technologies.
 					</Typography>
+					<ButtonGroup variant="contained">
+						<Button
+							onClick={() => handleSkillToggle(true)}
+							color={toggleSkills ? "primary" : "inherit"}>
+							Skills
+						</Button>
+						<Button
+							onClick={() => handleSkillToggle(false)}
+							color={!toggleSkills ? "primary" : "inherit"}>
+							Tools
+						</Button>
+					</ButtonGroup>
 				</Box>
 				<Box
 					sx={{
@@ -173,16 +192,8 @@ export default function SkillsSection() {
 						flexWrap: "wrap",
 						justifyContent: "center",
 					}}>
-					{handleSkills()}
-				</Box>
-				<Box
-					sx={{
-						width: "50%",
-						display: "flex",
-						flexWrap: "wrap",
-						justifyContent: "center",
-					}}>
-					{handleTools()}
+					{" "}
+					{toggleSkills ? handleSkills() : handleTools()}
 				</Box>
 			</Box>
 			<hr style={{ width: "75%" }} />
