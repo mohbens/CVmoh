@@ -16,43 +16,36 @@ const tools = [
 		id: "3",
 		title: "Git",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain-wordmark.svg",
-		// Orange variant
 	},
 	{
 		id: "4",
 		title: "npm",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg",
-		// Red variant
 	},
 	{
 		id: "5",
 		title: "Slack",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
-		// Purple variant
 	},
 	{
 		id: "6",
 		title: "Photoshop",
 		img: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
-		// Dark blue Adobe icon
 	},
 	{
 		id: "7",
 		title: "Illustrator",
 		img: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
-		// Orange Adobe icon
 	},
 	{
 		id: "8",
 		title: "XD",
 		img: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg",
-		// Pink Adobe icon
 	},
 	{
 		id: "9",
 		title: "Premiere Pro",
 		img: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
-		// Purple Adobe icon
 	},
 	{
 		id: "10",
@@ -102,19 +95,53 @@ const handleSkills = () => {
 			sx={{
 				padding: 2,
 				margin: 1,
-				transition: "transform 0.2s",
-				borderRadius: "20px",
+				transition: "all 0.3s ease",
+				position: "relative",
 				"&:hover": {
-					transform: "scale(1.05)",
+					transform: "translateY(-5px)",
+					"& .skill-label": {
+						opacity: 1,
+						transform: "translateY(-20px)",
+					},
+					"& .skill-icon": {
+						transform: "scale(1.1)",
+					},
 				},
 			}}>
-			<Box sx={{ display: "flex", alignItems: "center" }}>
+			<Box
+				sx={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					position: "relative",
+				}}>
 				<img
 					src={skill.img}
 					alt={skill.title}
-					style={{ width: 40, height: 40 }}
+					className="skill-icon"
+					style={{
+						width: 40,
+						height: 40,
+						transition: "all 0.3s ease",
+					}}
 				/>
-				<Typography variant="h6" sx={{ fontWeight: 500 }}></Typography>
+				<Typography
+					className="skill-label"
+					sx={{
+						position: "absolute",
+						textAlign: "center",
+
+						top: "-20px",
+						opacity: 0,
+						transition: "all 0.3s ease",
+						backgroundColor: "rgba(0,0,0,0.8)",
+						color: "#fff",
+						padding: "4px 12px",
+						borderRadius: "4px",
+						fontSize: "0.8rem",
+					}}>
+					{skill.title}
+				</Typography>
 			</Box>
 		</Paper>
 	));
@@ -128,19 +155,47 @@ const handleTools = () => {
 			sx={{
 				padding: 2,
 				margin: 1,
-				transition: "transform 0.2s",
-				borderRadius: "20px",
+				transition: "all 0.3s ease",
+				position: "relative",
 				"&:hover": {
-					transform: "scale(1.05)",
+					transform: "translateY(-5px)",
+					"& .tool-label": {
+						opacity: 1,
+						transform: "translateY(-20px)",
+					},
+					"& .tool-icon": {
+						transform: "scale(1.1)",
+					},
 				},
 			}}>
-			<Box sx={{ display: "flex", alignItems: "center" }}>
+			<Box
+				sx={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}>
 				<img
 					src={tool.img}
 					alt={tool.title}
 					style={{ width: 40, height: 40 }}
 				/>
-				<Typography variant="h6" sx={{ fontWeight: 500 }}></Typography>
+				<Typography
+					className="tool-label"
+					sx={{
+						textAlign: "center",
+						justifyContent: "center",
+						position: "absolute",
+						top: "-5px",
+						opacity: 0,
+						transition: "all 0.3s ease",
+						backgroundColor: "rgba(0,0,0,0.8)",
+						color: "#fff",
+						padding: "4px 12px",
+						borderRadius: "4px",
+						fontSize: "0.8rem",
+					}}>
+					{tool.title}
+				</Typography>
 			</Box>
 		</Paper>
 	));
@@ -180,7 +235,8 @@ export default function SkillsSection() {
 						</Button>
 						<Button
 							onClick={() => handleSkillToggle(false)}
-							color={!toggleSkills ? "primary" : "inherit"}>
+							color={!toggleSkills ? "primary" : "inherit"}
+							sx={{ transition: "all 0.5s ease" }}>
 							Tools
 						</Button>
 					</ButtonGroup>
@@ -192,7 +248,6 @@ export default function SkillsSection() {
 						flexWrap: "wrap",
 						justifyContent: "center",
 					}}>
-					{" "}
 					{toggleSkills ? handleSkills() : handleTools()}
 				</Box>
 			</Box>
