@@ -37,8 +37,8 @@ const ProfileImage = styled("img")({
 const AnimatedBlob = ({ isScrolled }) => (
 	<BlobContainer
 		sx={{
-			width: isScrolled ? 180 : 280,
-			height: isScrolled ? 180 : 280,
+			width: isScrolled ? 100 : 280,
+			height: isScrolled ? 100 : 280,
 			transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important",
 		}}>
 		<ProfileImage

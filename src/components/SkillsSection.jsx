@@ -27,55 +27,63 @@ const tools = [
 		title: "Slack",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
 	},
+
 	{
 		id: "6",
-		title: "Photoshop",
-		img: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
-	},
-	{
-		id: "7",
-		title: "Illustrator",
-		img: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
-	},
-	{
-		id: "8",
-		title: "XD",
-		img: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg",
-	},
-	{
-		id: "9",
-		title: "Premiere Pro",
-		img: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
-	},
-	{
-		id: "10",
 		title: "WebPack",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg",
 	},
 	{
-		id: "11",
+		id: "7",
 		title: "Postman",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
 	},
 	{
-		id: "12",
+		id: "8",
 		title: "Swagger",
 		img: "https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png",
 	},
 	{
-		id: "13",
+		id: "9",
 		title: "Jira",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
 	},
 	{
-		id: "14",
+		id: "10",
 		title: "Confluence",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg",
 	},
 	{
-		id: "15",
+		id: "11",
 		title: "MongoDB",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+	},
+
+	{
+		id: "12",
+		title: "Apigee",
+		img: "https://www.vectorlogo.zone/logos/apigee/apigee-icon.svg",
+	},
+
+	{
+		id: "13",
+		title: "Photoshop",
+		img: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
+	},
+	{
+		id: "14",
+		title: "Illustrator",
+		img: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
+	},
+	{
+		id: "15",
+		title: "XD",
+		img: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg",
+	},
+	{
+		id: "16",
+		title: "Premiere Pro",
+		img: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
 	},
 ];
 
@@ -107,8 +115,23 @@ const skills = [
 	},
 	{
 		id: "6",
+		title: "Vue.js",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+	},
+	{
+		id: "7",
 		title: "SASS",
 		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+	},
+	{
+		id: "8",
+		title: "JAVA",
+		img: "https://www.vectorlogo.zone/logos/java/java-icon.svg",
+	},
+	{
+		id: "9",
+		title: "Arduino",
+		img: "https://www.vectorlogo.zone/logos/arduino/arduino-icon.svg",
 	},
 ];
 

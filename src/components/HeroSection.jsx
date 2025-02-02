@@ -2,7 +2,10 @@
 import { Box, Typography } from "@mui/material";
 import { Code } from "@mui/icons-material";
 import AnimatedBlob from "./AnimationBlob";
-import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import SmartphoneIcon from "@mui/icons-material/Smartphone";
+
+// import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 // import a from "../assets";
 
 const HeroSection = ({ isScrolled }) => (
@@ -35,7 +38,6 @@ const HeroSection = ({ isScrolled }) => (
 				}}>
 				Mohamed BENSELAMA
 			</Typography>
-
 			<Typography
 				variant="h4"
 				sx={{
@@ -51,6 +53,65 @@ const HeroSection = ({ isScrolled }) => (
 				<Code fontSize="inherit" sx={{ mr: "8px" }} />
 				Full Stack Dev
 			</Typography>
+			<Box
+				sx={{
+					mt: isScrolled ? "80px" : "",
+					display: isScrolled ? "" : "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					textAlign: "center",
+				}}>
+				<Typography
+					variant="h4"
+					sx={{
+						opacity: isScrolled ? 1 : 0,
+						color: "text.secondary",
+						display: "flex",
+						alignItems: "center",
+						fontSize: {
+							xs: "1.2rem",
+							sm: isScrolled ? "1rem" : "1.5rem",
+							md: isScrolled ? "1.8rem" : "2.3rem",
+						},
+					}}>
+					<AlternateEmailIcon
+						sx={{
+							fontSize: {
+								xs: "1.2rem",
+								sm: isScrolled ? "1rem" : "1.5rem",
+								md: isScrolled ? "1.8rem" : "2.3rem",
+							},
+							mr: "8px",
+						}}
+					/>
+					mohbenselama@gmail.com
+				</Typography>
+				<Typography
+					variant="h4"
+					sx={{
+						opacity: isScrolled ? 1 : 0,
+						color: "text.secondary",
+						display: "flex",
+						alignItems: "center",
+						fontSize: {
+							xs: "1.2rem",
+							sm: isScrolled ? "1rem" : "1.5rem",
+							md: isScrolled ? "1.8rem" : "2.3rem",
+						},
+					}}>
+					<SmartphoneIcon
+						sx={{
+							fontSize: {
+								xs: "1.2rem",
+								sm: isScrolled ? "1rem" : "1.5rem",
+								md: isScrolled ? "1.8rem" : "2.3rem",
+							},
+							mr: "8px",
+						}}
+					/>
+					+213 675996701
+				</Typography>
+			</Box>
 		</Box>
 		{/* <Box
 			sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>

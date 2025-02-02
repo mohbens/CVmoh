@@ -8,9 +8,9 @@ import {
 	createTheme,
 } from "@mui/material";
 import ProjectList from "./components/ProjectList";
-import { Code, Email, GitHub, LinkedIn } from "@mui/icons-material";
-import { fontSize, styled } from "@mui/system";
-import { GlobalStyles } from "@mui/material";
+import { Email, GitHub, LinkedIn } from "@mui/icons-material";
+// import { fontSize, styled } from "@mui/system";
+// import { GlobalStyles } from "@mui/material";
 import HeroSection from "./components/HeroSection";
 
 import { useEffect, useState } from "react";
@@ -34,48 +34,6 @@ const theme = createTheme({
 		fontFamily: "'Fira Code', monospace",
 	},
 });
-
-// const BlobContainer = styled("div")(({ theme }) => ({
-// 	position: "relative",
-// 	width: 300,
-// 	height: 300,
-// 	margin: "40px auto",
-// 	borderRadius: "50%",
-// 	overflow: "hidden",
-// 	filter: "url(#goo)",
-// 	"&::before": {
-// 		content: '""',
-// 		position: "absolute",
-// 		width: "100%",
-// 		height: "100%",
-// 		background: theme.palette.primary.main,
-// 		animation: "float 6s ease-in-out infinite",
-// 	},
-// 	"&:hover": {
-// 		"&::before": {
-// 			transform: "scale(1.1)",
-// 		},
-// 	},
-// 	"@keyframes float": {
-// 		"0%, 100%": {
-// 			borderRadius: "60% 40% 30% 70%/60% 30% 70% 40%",
-// 			transform: "translateY(0)",
-// 		},
-// 		"50%": {
-// 			borderRadius: "50% 60% 70% 40%/50% 60% 30% 60%",
-// 			transform: "translateY(-20px)",
-// 		},
-// 	},
-// }));
-
-// const ProfileImage = styled("img")({
-// 	position: "relative",
-// 	zIndex: 1,
-// 	width: "100%",
-// 	height: "100%",
-// 	objectFit: "cover",
-// 	borderRadius: "50%",
-// });
 
 const AboutSection = () => (
 	<Box>
@@ -140,7 +98,7 @@ function App() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 100);
+			setIsScrolled(window.scrollY > 50);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -154,10 +112,11 @@ function App() {
 				<Box
 					sx={{
 						position: isScrolled ? "fixed" : "relative",
-						top: 0,
-						left: 0,
+						// top: 0,
+						// left: 0,
 						width: isScrolled ? "20%" : "100%",
 						height: "100vh",
+
 						display: "flex",
 						alignItems: isScrolled ? "baseline" : "center",
 						justifyContent: "center",
@@ -167,8 +126,7 @@ function App() {
 					}}>
 					<HeroSection
 						isScrolled={isScrolled}
-						// sx={{ alignItems: isScrolled ? "baseline" : "center" }}
-						// align-items: baseline;
+						sx={{ alignItems: isScrolled ? "baseline" : "center" }}
 					/>
 
 					{/* Vertical Separator */}
