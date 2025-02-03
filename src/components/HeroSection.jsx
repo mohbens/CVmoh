@@ -13,7 +13,8 @@ const HeroSection = ({ isScrolled }) => (
 				flexDirection: "column",
 				alignItems: "center",
 				textAlign: "center",
-				padding: { xs: 2, sm: isScrolled ? 4 : 0 },
+				pt: { xs: 10 },
+				// padding: { xs: 1, sm: isScrolled ? 4 : 0 },
 				transform: {
 					xs: "scale(1)",
 					sm: isScrolled ? "scale(0.8)" : "scale(1)",
@@ -26,6 +27,7 @@ const HeroSection = ({ isScrolled }) => (
 			<Typography
 				variant="h2"
 				sx={{
+					color: "primary.main",
 					mt: { xs: 2, sm: 4 },
 					mb: { xs: 1, sm: 2 },
 					fontSize: {
@@ -53,7 +55,7 @@ const HeroSection = ({ isScrolled }) => (
 			</Typography>
 			<Box
 				sx={{
-					mt: isScrolled ? "80px" : "",
+					mt: { sm: "", md: isScrolled ? "80px" : "" },
 					display: isScrolled ? "" : "flex",
 					flexDirection: "column",
 					alignItems: "center",
@@ -62,7 +64,10 @@ const HeroSection = ({ isScrolled }) => (
 				<Typography
 					variant="h4"
 					sx={{
-						opacity: isScrolled ? 1 : 0,
+						opacity: {
+							xs: 0,
+							md: isScrolled ? 1 : 0,
+						},
 						color: "text.secondary",
 						display: "flex",
 						alignItems: "center",
@@ -87,7 +92,10 @@ const HeroSection = ({ isScrolled }) => (
 				<Typography
 					variant="h4"
 					sx={{
-						opacity: isScrolled ? 1 : 0,
+						opacity: {
+							xs: 0,
+							md: isScrolled ? 1 : 0,
+						},
 						color: "text.secondary",
 						display: "flex",
 						alignItems: "center",

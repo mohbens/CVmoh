@@ -37,7 +37,7 @@ const AboutSection = () => (
 			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
 				À propos
 			</Typography>
-			<Typography variant="body1" paragraph sx={{ color: "text.secondary" }}>
+			<Typography variant="body1" sx={{ color: "text.secondary" }}>
 				<span style={{ fontSize: "large", fontWeight: "bold" }}>
 					Développeur web passionné
 				</span>
