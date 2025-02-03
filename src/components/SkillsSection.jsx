@@ -162,14 +162,16 @@ const handleSkills = () => {
 					alignItems: "center",
 					justifyContent: "center",
 					position: "relative",
+					width: 40,
+					height: 40,
 				}}>
 				<img
 					src={skill.img}
 					alt={skill.title}
 					className="skill-icon"
 					style={{
-						width: 40,
-						height: 40,
+						width: 55,
+						height: 55,
 						transition: "all 0.3s ease",
 					}}
 				/>
@@ -221,11 +223,13 @@ const handleTools = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
+					width: 40,
+					height: 40,
 				}}>
 				<img
 					src={tool.img}
 					alt={tool.title}
-					style={{ width: 40, height: 40 }}
+					style={{ width: 55, height: 55, transition: "all 0.3s ease" }}
 				/>
 				<Typography
 					className="tool-label"
@@ -257,12 +261,20 @@ export default function SkillsSection() {
 	};
 
 	return (
-		<Box sx={{ justifyItems: "center" }}>
-			<Box sx={{ display: "flex", alignItems: "center", maxWidth: "950px" }}>
+		<Box sx={{ justifyItems: "space-around" }}>
+			<Box
+				sx={{
+					display: "flex",
+					// justifyContent: "space-around",
+					alignItems: "center",
+					maxWidth: "1400px",
+					mt: "40px",
+					mb: "40px",
+				}}>
 				<Box
 					sx={{
 						padding: 4,
-						maxWidth: "1200px",
+						// maxWidth: "1200px",
 						margin: "0 auto",
 						width: "50%",
 						// alignItems: "center",
@@ -270,7 +282,7 @@ export default function SkillsSection() {
 					<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
 						Skills
 					</Typography>
-					<Typography paragraph sx={{ mb: 4 }}>
+					<Typography sx={{ mb: 4 }}>
 						I develop simple, intuitive and responsive user interface that helps
 						users get things done with less effort and time with these
 						technologies.
@@ -291,7 +303,7 @@ export default function SkillsSection() {
 				</Box>
 				<Box
 					sx={{
-						width: "50%",
+						width: "40%",
 						display: "flex",
 						flexWrap: "wrap",
 						justifyContent: "center",

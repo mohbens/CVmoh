@@ -9,10 +9,7 @@ import {
 } from "@mui/material";
 import ProjectList from "./components/ProjectList";
 import { Email, GitHub, LinkedIn } from "@mui/icons-material";
-// import { fontSize, styled } from "@mui/system";
-// import { GlobalStyles } from "@mui/material";
 import HeroSection from "./components/HeroSection";
-
 import { useEffect, useState } from "react";
 import SkillsSection from "./components/SkillsSection";
 const theme = createTheme({

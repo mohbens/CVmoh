@@ -113,19 +113,6 @@ const HeroSection = ({ isScrolled }) => (
 				</Typography>
 			</Box>
 		</Box>
-		{/* <Box
-			sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-			<KeyboardDoubleArrowDownIcon
-				sx={{
-					transition: "transform 0.2s",
-					"&:hover": { transform: "translateY(-10px)" },
-				}}
-			/>
-			<hr
-				style={{
-					width: "75%",
-				}}></hr>
-		</Box> */}
 	</Box>
 );
 
