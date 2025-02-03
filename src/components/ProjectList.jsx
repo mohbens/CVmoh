@@ -1,4 +1,3 @@
-// components/ProjectList.jsx
 "use client";
 import React from "react";
 import {
@@ -107,7 +106,7 @@ const projects = [
 
 const ProjectList = () => {
 	return (
-		<Box>
+		<Box item xs={12} sm={6} md={4}>
 			<Box
 				sx={{
 					padding: {

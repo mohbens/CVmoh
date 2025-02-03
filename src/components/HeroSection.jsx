@@ -1,12 +1,9 @@
-// HeroSection.jsx
 import { Box, Typography } from "@mui/material";
 import { Code } from "@mui/icons-material";
 import AnimatedBlob from "./AnimationBlob";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
-
-// import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
-// import a from "../assets";
+// opacity: { xs: isScrolled ? 0 : 1, sm: 1, sx: 1 },
 
 const HeroSection = ({ isScrolled }) => (
 	<Box>
@@ -16,8 +13,11 @@ const HeroSection = ({ isScrolled }) => (
 				flexDirection: "column",
 				alignItems: "center",
 				textAlign: "center",
-				padding: isScrolled ? 4 : 0,
-				transform: isScrolled ? "scale(0.8)" : "scale(1)",
+				padding: { xs: 2, sm: isScrolled ? 4 : 0 },
+				transform: {
+					xs: "scale(1)",
+					sm: isScrolled ? "scale(0.8)" : "scale(1)",
+				},
 				transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
 				width: "100%",
 			}}>
@@ -26,12 +26,10 @@ const HeroSection = ({ isScrolled }) => (
 			<Typography
 				variant="h2"
 				sx={{
-					color: "primary.main",
-					mt: 4,
-					mb: 2,
-					textShadow: "0 0 15px rgba(100, 255, 218, 0.4)",
+					mt: { xs: 2, sm: 4 },
+					mb: { xs: 1, sm: 2 },
 					fontSize: {
-						xs: "1.8rem",
+						xs: "1.5rem",
 						sm: isScrolled ? "1.3rem" : "1.8rem",
 						md: isScrolled ? "2rem" : "3rem",
 					},

@@ -1,4 +1,3 @@
-// components/AnimatedBlob.jsx
 import { styled } from "@mui/system";
 import { Box } from "@mui/material";
 import { keyframes } from "@emotion/react";
@@ -37,15 +36,18 @@ const ProfileImage = styled("img")({
 const AnimatedBlob = ({ isScrolled }) => (
 	<BlobContainer
 		sx={{
-			width: isScrolled ? 100 : 280,
-			height: isScrolled ? 100 : 280,
+			width: { xs: 200, sm: isScrolled ? 100 : 280 },
+			height: { xs: 200, sm: isScrolled ? 100 : 280 },
 			transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important",
 		}}>
 		<ProfileImage
 			src={require("../assets/Profile.png")}
 			alt="Profile"
 			sx={{
-				transform: isScrolled ? "scale(0.8)" : "scale(1)",
+				transform: {
+					xs: "scale(1)",
+					sm: isScrolled ? "scale(0.8)" : "scale(1)",
+				},
 				transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
 			}}
 		/>

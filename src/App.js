@@ -1,4 +1,3 @@
-// App.jsx
 import {
 	Box,
 	CssBaseline,
@@ -108,14 +107,14 @@ function App() {
 			<Box sx={{ position: "relative", minHeight: "100vh" }}>
 				<Box
 					sx={{
-						position: isScrolled ? "fixed" : "relative",
-						// top: 0,
-						// left: 0,
-						width: isScrolled ? "20%" : "100%",
-						height: "100vh",
-
+						position: { xs: "relative", sm: isScrolled ? "fixed" : "relative" },
+						width: { xs: "100%", sm: isScrolled ? "20%" : "100%" },
+						height: { xs: "auto", sm: "100vh" },
 						display: "flex",
-						alignItems: isScrolled ? "baseline" : "center",
+						alignItems: {
+							xs: "center",
+							sm: isScrolled ? "baseline" : "center",
+						},
 						justifyContent: "center",
 						transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
 						zIndex: 2,
@@ -123,12 +122,13 @@ function App() {
 					}}>
 					<HeroSection
 						isScrolled={isScrolled}
-						sx={{ alignItems: isScrolled ? "baseline" : "center" }}
+						// sx={{ alignItems: isScrolled ? "baseline" : "center" }}
 					/>
 
 					{/* Vertical Separator */}
 					<Box
 						sx={{
+							display: { xs: "none", sm: "block" },
 							position: "absolute",
 							right: 0,
 							top: 0,
@@ -146,15 +146,15 @@ function App() {
 				<Box
 					sx={{
 						position: "relative",
-						marginLeft: isScrolled ? "20%" : 0,
-						paddingLeft: 2,
+						marginLeft: { xs: 0, sm: isScrolled ? "20%" : 0 },
+						paddingLeft: { xs: 0, sm: 2 },
 						transition: "margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
 						zIndex: 1,
-						paddingTop: "240px",
+						paddingTop: { xs: "40px", sm: "240px" },
 					}}>
 					<AboutSection />
 					<ProjectList />
-					<SkillsSection />
+					<SkillsSection isScrolled={isScrolled} />
 					<ContactSection />
 				</Box>
 			</Box>

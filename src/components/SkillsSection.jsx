@@ -253,7 +253,7 @@ const handleTools = () => {
 	));
 };
 
-export default function SkillsSection() {
+export default function SkillsSection(isScrolled) {
 	const [toggleSkills, setToggleSkills] = useState(true);
 
 	const handleSkillToggle = (showSkills) => {
@@ -261,10 +261,10 @@ export default function SkillsSection() {
 	};
 
 	return (
-		<Box sx={{ justifyItems: "space-around" }}>
+		<Box sx={{ justifyItems: "space-around", py: { sm: 0, md: 1 } }}>
 			<Box
 				sx={{
-					display: "flex",
+					display: { sm: "", md: "flex" },
 					// justifyContent: "space-around",
 					alignItems: "center",
 					maxWidth: "1400px",
@@ -274,10 +274,8 @@ export default function SkillsSection() {
 				<Box
 					sx={{
 						padding: 4,
-						// maxWidth: "1200px",
 						margin: "0 auto",
-						width: "50%",
-						// alignItems: "center",
+						width: { sm: "100%", md: "50%" },
 					}}>
 					<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
 						Skills
@@ -287,23 +285,36 @@ export default function SkillsSection() {
 						users get things done with less effort and time with these
 						technologies.
 					</Typography>
-					<ButtonGroup variant="contained">
-						<Button
-							onClick={() => handleSkillToggle(true)}
-							color={toggleSkills ? "primary" : "inherit"}>
-							Skills
-						</Button>
-						<Button
-							onClick={() => handleSkillToggle(false)}
-							color={!toggleSkills ? "primary" : "inherit"}
-							sx={{ transition: "all 0.5s ease" }}>
-							Tools
-						</Button>
-					</ButtonGroup>
+					<Box
+						sx={{
+							display: "flex",
+							width: "100%",
+							justifyContent: { sm: "center", md: "flex-start" },
+						}}>
+						<ButtonGroup
+							variant="contained"
+							sx={{
+								transition: "all 0.5s ease",
+								width: "50%",
+							}}>
+							<Button
+								sx={{ transition: "all 0.5s ease", width: "100%" }}
+								onClick={() => handleSkillToggle(true)}
+								color={toggleSkills ? "primary" : "inherit"}>
+								Skills
+							</Button>
+							<Button
+								onClick={() => handleSkillToggle(false)}
+								color={!toggleSkills ? "primary" : "inherit"}
+								sx={{ transition: "all 0.5s ease", width: "100%" }}>
+								Tools
+							</Button>
+						</ButtonGroup>
+					</Box>
 				</Box>
 				<Box
 					sx={{
-						width: "40%",
+						width: { sm: "100%", md: "40%" },
 						display: "flex",
 						flexWrap: "wrap",
 						justifyContent: "center",
