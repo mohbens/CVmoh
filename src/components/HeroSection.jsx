@@ -1,8 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Code } from "@mui/icons-material";
 import AnimatedBlob from "./AnimationBlob";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import DownloadIcon from "@mui/icons-material/Download";
+
 // opacity: { xs: isScrolled ? 0 : 1, sm: 1, sx: 1 },
 
 const HeroSection = ({ isScrolled }) => (
@@ -118,6 +120,23 @@ const HeroSection = ({ isScrolled }) => (
 					+213 675996701
 				</Typography>
 			</Box>
+		</Box>
+		<Box sx={{ display: "flex", justifyContent: "center" }}>
+			<Button
+				variant="contained"
+				color="primary"
+				startIcon={<DownloadIcon />}
+				sx={{
+					mb: 4,
+					"&:hover": {
+						transform: "translateY(-2px)",
+						boxShadow: "0 5px 15px rgba(100, 255, 218, 0.3)",
+					},
+				}}
+				href="/documents/Mohamed_Benselama_CV.pdf"
+				download="Mohamed_Benselama_CV.pdf">
+				Télécharger mon CV
+			</Button>
 		</Box>
 	</Box>
 );

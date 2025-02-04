@@ -1,5 +1,6 @@
 import {
 	Box,
+	Button,
 	CssBaseline,
 	Link,
 	ThemeProvider,
@@ -70,18 +71,17 @@ const ContactSection = () => (
 			<Typography variant="h4" gutterBottom sx={{ fontWeight: 700, mb: 4 }}>
 				Contact
 			</Typography>
+
 			<Box sx={{ display: "flex", justifyContent: "center", gap: 4 }}>
 				<Link href="mohbenselama@gmail.com" color="inherit">
 					<Email sx={{ fontSize: 40, color: "primary.main" }} />
 				</Link>
-				<Link href="https://github.com/mohbens" target="_blank" rel="noopener">
+				<Link href="https://github.com/mohbens" target="_blank">
 					<GitHub sx={{ fontSize: 40, color: "primary.main" }} />
 				</Link>
 				<Link
 					href="https://www.linkedin.com/in/mohamed-redha-benselama/"
-					target="_blank"
-					// rel="noopener"
-				>
+					target="_blank">
 					<LinkedIn sx={{ fontSize: 40, color: "primary.main" }} />
 				</Link>
 			</Box>
